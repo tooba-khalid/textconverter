@@ -43,7 +43,7 @@ props.showAlert("converted to uppercase","success") ;
     <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
         <h2> Your text summary</h2>
 <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words, {text.length} characters</p>
-<p>{0.008 * text.split("/ \s+/").filter((element)=>{return element.length!==0}).length} minutes read</p>
+<p>{0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length} minutes read</p>
 <h2>Preview</h2>
 <p>{text.length>0?text:"Enter something to preview"}</p>
     </div>
