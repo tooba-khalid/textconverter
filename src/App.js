@@ -10,7 +10,7 @@ import {
   
   Routes,
   Route,
-  BrowserRouter,
+  HashRouter
 } from "react-router-dom";
 
 
@@ -48,17 +48,17 @@ setTimeout(() => {
 
  return (
    
-   <BrowserRouter>
+   <HashRouter>
  <Navbar title="Textutils" mode={mode} toggle={toggleStyle} stn={stntxt}/>
  <Alert alert={alert}/>
  <Routes>
   <Route path='/' element={<TextForm showAlert={showAlert} heading="Enter your text to analyse" mode={mode} stn={stntxt}/>}/> 
 
-  <Route path='/about' element={<About/>}/> 
+  <Route path='/about' element={<About mode={mode} />}/> 
   </Routes>
 
  
- </BrowserRouter>
+ </HashRouter>
  );
 }
 
