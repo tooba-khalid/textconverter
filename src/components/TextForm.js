@@ -28,6 +28,15 @@ props.showAlert("converted to uppercase","success") ;
                 console.log('on change');
                 setText(event.target.value);
             }
+      const copyText=()=>{
+        let text=document.getElementById('myBox');
+        text.select();
+        navigator.clipboard.writeText(text.value);
+      }      
+      const removeSpaces=()=>{
+let newText=text.split(/[ ]+/);
+setText(newText.join(' '))
+      }
   return (
     <>
     <div className='container my-3' style={{color:props.mode==='dark'?'white':'black'}} >
@@ -38,12 +47,14 @@ props.showAlert("converted to uppercase","success") ;
 </div>
 <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert into Uppercase</button>
 <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert into Lowercase</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={copyText}>Copy Text</button>
 <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={clearClick}>Clear text</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={removeSpaces}>Remove Extra Spaces</button>
     </div>
     <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
         <h2> Your text summary</h2>
 <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words, {text.length} characters</p>
-<p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes read</p>
+<p>{0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length} minutes read</p>
 <h2>Preview</h2>
 <p>{text.length>0?text:"nothing for preview"}</p>
     </div>
