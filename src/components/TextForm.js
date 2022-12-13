@@ -47,7 +47,7 @@ setText(newText.join(' '))
 </div>
 <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert into Uppercase</button>
 <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert into Lowercase</button>
-<button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={copyText}>Copy Text</button>
+<button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={copyText}>Copy all Text</button>
 <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={clearClick}>Clear text</button>
 <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={removeSpaces}>Remove Extra Spaces</button>
     </div>
