@@ -1,8 +1,7 @@
 
 import  React,{useState} from 'react';
 import './App.css';
- import About from './components/About';
-// import Aboutnew from './components/Aboutnew';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import TextForm from './components/TextForm'
@@ -15,8 +14,8 @@ import {
 
 
 function App() {
- const[mode,setMode]=useState('light')
- const[alert,setAlert]=useState(null)
+ const[mode,setMode]=useState('light') //set mode of body of document by usestate hook
+ const[alert,setAlert]=useState(null) //set alert state
 
  const[stntxt,setStnTxt]=useState('Enable Dark Mode')
  const showAlert=(message,type)=>{
@@ -26,7 +25,7 @@ setAlert({
 })
 setTimeout(() => {
  setAlert(null);
-}, 3000);
+}, 3000);                    //set alert timing how long it will display on the page
  }
  const toggleStyle=()=>{
    if(mode==='light'){
